@@ -1,0 +1,36 @@
+<a style="float: right;" href="/">Logout</a>
+<button><a href="/dashboard">Home</a></button> | <button (click)="addquestion()">Add A Question!</button>
+<br>
+<h2>New Question</h2>
+<br>
+<br>
+<form (submit)="insertQuestion()">
+  <table>
+    <tr>
+      <td>Question:</td>
+      <td><textarea name="q" rows="4" cols="80" [(ngModel)]="new_trivia.question" required minlength = '15' #question="ngModel"></textarea></td>
+      <td><span *ngIf="!question.valid" class='red'> Question must be at least 15 characters long</span></td>
+    </tr>
+    <tr>
+      <td>Correct Answer:</td>
+      <td><textarea name="canswer" rows="3" cols="50" [(ngModel)]="new_trivia.cAnswer" ></textarea></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fake Answer #1:</td>
+      <td><textarea name="fake1" rows="3" cols="50" [(ngModel)]="new_trivia.fake1" ></textarea></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fake Answer #2:</td>
+      <td><textarea name="fake2" rows="3" cols="50" [(ngModel)]="new_trivia.fake2" ></textarea></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><button><a href="/home">Cancel</a></button> | <input type="submit" value="Add Question"></td>
+      <td></td>
+    </tr>
+  </table>
+
+</form>
