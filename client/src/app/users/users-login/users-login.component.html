@@ -1,0 +1,9 @@
+<h4>Login:</h4>
+<form (submit)="login()" #myForm="ngForm">
+  <input type="text" name="name" placeholder="Name" [(ngModel)]="new_user.name" required><br>
+
+  <input type="submit" value="Login" [disabled]="!myForm.valid">
+
+</form>
+<hr>
+<br>

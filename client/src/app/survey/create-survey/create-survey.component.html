@@ -1,0 +1,12 @@
+<h4>Put the question and options here:</h4>
+<br>
+<br>
+<form (submit)="create()" #myCreateForm="ngForm">
+  <input type="text" name="Question" placeholder="Survey Question" [(ngModel)]="new_survey.question" required minlength='8' #question="ngModel"><span class="red" *ngIf="!question.valid"> 8 Characters required </span><br>
+  <input type="text" name="option 1" placeholder="option 1" [(ngModel)]="new_survey.option_1" required #options="ngModel"><br>
+  <input type="text" name="option 2" placeholder="option 2" [(ngModel)]="new_survey.option_2" required #options="ngModel"><br>
+  <input type="text" name="option 3" placeholder="option 3" [(ngModel)]="new_survey.option_3" required #options="ngModel"><br>
+  <input type="text" name="option 4" placeholder="option 4" [(ngModel)]="new_survey.option_4" required #options="ngModel"><br>
+  <span class="red" *ngIf="!options.valid"> Must Fill out all options </span><br>
+  <input type="submit" value="Submit" [disabled]="!myCreateForm.valid">
+</form>
